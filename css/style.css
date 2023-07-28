@@ -1,0 +1,628 @@
+@charset "UTF-8";
+/* Scss Document */
+html {
+  font-size: 62.5%; }
+:root {
+  --backurl: url("../img/menu_shibuya.jpg");
+
+}
+
+/*------------------------------------------------------------
+　共通
+------------------------------------------------------------*/
+body {
+  font-family: YuGothic, 'Yu Gothic medium', 'Hiragino Sans', Meiryo, 'sans-serif';
+  font-size: 1.4rem;
+  font-weight: 100;
+  color: #0d0404;
+  line-height: 1.6;
+  letter-spacing: 1px; }
+  @media screen and (max-width: 1023px) {
+    body {
+      padding: 0 10px;
+      width: 100%; } }
+
+/*文字*/
+p {
+  margin: 32px 0; }
+  @media screen and (max-width: 1279px) {
+    p {
+      margin: 24px 0; } }
+
+a {
+  position: relative;
+  transition: 0.2s;
+  color: #0d0404; }
+  a:hover {
+    background: #8a9a97;
+    transition: 0.2s;
+    color: #fff; }
+
+img {
+  width: 100%;
+  height: auto;
+}
+
+h1, h2, h3, h4 {
+  font-family: 'Julius Sans One','Noto Sans JP',"Hiragino Sans", "Hiragino Kaku Gothic ProN", Meiryo, sans-serif;
+  font-weight: normal;
+  letter-spacing: 2px; }
+
+h2 {
+  position: absolute;
+  top: -16px;
+  left: 240px;
+  font-size: 3rem;
+  margin: 60px -10px 16px;
+  background: #0d0404;
+  color: #fff;
+  width: 800px;
+  padding-left: 80px;
+  transform: rotate(-15deg);
+  animation: slideIn 1.5s ease 0s 1 normal;
+  z-index: -3; }
+  @media screen and (max-width: 1279px) {
+    h2 {
+      top: -10px;
+      left: -20px;
+      font-size: 2rem;
+      width: 380px;
+      padding-left: 40px; } }
+
+h3 {
+  position: relative;
+  font-size: 2.4rem;
+  margin: 0px 0 24px;
+  padding-left: 24px; }
+  h3::before {
+    position: absolute;
+    left: 0;
+    top: calc(50% - 8px);
+    content: "";
+    display: block;
+    width: 16px;
+    height: 16px;
+    border: 8px solid transparent;
+    border-left-color: #0d0404;
+    border-left-width: 14px; }
+  @media screen and (max-width: 1023px) {
+    h3 {
+      font-size: 1.8rem; } }
+
+h4 {
+  position: relative;
+  font-size: 1.8rem;
+  margin: 0px 0 24px;
+  padding-left: 24px; }
+  h4::before {
+    position: absolute;
+    top: 0;
+    left: 0;
+    content: "";
+    display: block;
+    width: 16px;
+    height: 14px;
+    border-bottom: 1px dashed #0d0404; }
+  @media screen and (max-width: 1023px) {
+    h4 {
+      font-size: 1.6rem; } }
+
+em {
+  text-decoration: underline;
+  font-style: normal; }
+
+ul, ol, dl {
+  margin: 24px 0; }
+  ul li, ol li, dl li {
+    margin: 8px 0; }
+
+/*フォーム　ボタン*/
+input, textarea {
+  border: none;
+  border: 1px solid #0d0404; }
+
+input[type="submit"] {
+  cursor: pointer; }
+
+.btn {
+  background-color: #0d0404;
+  border: 1px solid #0d0404;
+  margin: 16px 0;
+  color: #fff;
+  transition: 0.2s;
+  text-decoration: none;
+  letter-spacing: 2px; }
+  .btn:hover {
+    background: #8a9a97;
+    cursor: pointer;
+    text-decoration: none;
+    transition: 0.2s; }
+
+a.btn {
+  padding: 4px 8px; }
+
+
+/*レイアウト*/
+.flex {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap; }
+
+.grid {
+  display: grid;
+  grid-template-columns: auto 1fr; }
+
+ul.yoko {
+  display: flex;
+  flex-wrap: wrap;
+  margin-bottom: 32px; }
+  ul.yoko li {
+    margin-right: 16px; }
+    ul.yoko li:last-child {
+      margin-right: 0; }
+
+/*装飾*/
+.arrow{
+	border: 2px solid #0d0404;
+	border-right: none;
+	border-bottom: none;
+	width: 8px;
+	height: 8px;
+}
+
+.label-double {
+  display: inline-block;
+  position: relative;
+  padding: 5px 8px 4px;
+  background: #8a9a97;
+  color: #fff;
+  font-family: 'Julius Sans One','Noto Sans JP',"Hiragino Sans", "Hiragino Kaku Gothic ProN", Meiryo, sans-serif;
+  margin-bottom: 24px;
+  width: auto; }
+  .label-double::after {
+    position: absolute;
+    top: -3px;
+    left: -3px;
+    content: "";
+    display: block;
+    width: calc(100% + 6px);
+    height: calc(100% + 6px);
+    border: 1px solid #8a9a97; }
+
+.label dt, .label dd {
+  padding: 4px 8px;
+  margin-bottom: 8px;
+  margin-right: 40px; }
+.label dt {
+  background-color: #8a9a97;
+  color: #fff;
+  text-decoration: none; }
+
+.hr {
+  margin-bottom: 80px; }
+
+/*---------------------------------
+2カラム
+---------------------------------*/
+
+.wrapper {
+  flex-wrap: nowrap; }
+	/*左　メニュー*/
+  .wrapper .left {
+    position: fixed;
+    left: 40px;
+    padding: 0 40px;
+    width: 240px;
+    height: 100vh;
+    color: #fff; }
+    @media screen and (max-width: 1279px) {
+      .wrapper .left {
+        left: auto;
+        right: -320px;
+        width: 320px;
+        transition: 0.3s;
+        z-index: 8; }
+        .wrapper .left.active {
+          transform: translateX(-320px);
+          transition: 0.3s; } }
+
+
+    .wrapper .left::before {
+      position: absolute;
+      top: 0;
+      left: 0;
+      content: "";
+      display: block;
+      width: 240px;
+      height: 100vh;
+      background: linear-gradient(to bottom, #0d0404, rgba(13, 4, 4, 0) 90vh), var(--backurl) no-repeat center bottom;
+      background-size: cover;
+      animation: fadeIn 1s ease 0s 1 normal;
+      z-index: -2; }
+      @media screen and (max-width: 1279px) {
+        .wrapper .left::before {
+          width: 320px; } }
+
+/*右　コンテンツ*/
+  .wrapper main {
+    padding: 120px 80px 0 540px;
+  animation: fadeIn 1s ease 0s 1 normal; }
+    @media screen and (max-width: 1279px) {
+      .wrapper main {
+        padding: 120px 8px 40px; } }
+
+/*---------------------------------
+サイト名
+---------------------------------*/
+header h1 {
+  margin: 40px 0;
+  color: #fff; }
+
+/*---------------------------------
+メニュー
+---------------------------------*/
+/*メニューボタン*/
+.menubtn {
+  position: fixed;
+  top: 40px;
+  right: 0;
+  display: inline-block;
+  background-color: #8a9a97;
+  color: #fff;
+  padding: 8px;
+  border-radius: 8px 0 0 8px;
+  z-index: 7;
+  transition: 0.3s; }
+  @media screen and (min-width: 1280px) {
+    .menubtn {
+      display: none; } }
+  .menubtn p {
+    margin: 0; }
+  .menubtn.active {
+    transform: translateX(-318px);
+    transition: 0.3s;
+    background-color: #0d0404;
+    color: #fff;
+    border-right-color: #fff; }
+
+/*メニュー*/
+nav .menu > li {
+  letter-spacing: 4px;
+  margin-bottom: 32px; }
+  nav .menu > li a {
+    color: #fff;
+    text-decoration: none; }
+  nav .menu > li ul {
+    margin: 0;
+    margin-left: 24px;
+    padding: 0;
+    height: calc(30px * 4 - 16px);
+    /*４をnovelのカテゴリーの数に変えてください*/
+    padding-left: 24px;
+    border-left: 1px dashed #fff; }
+    nav .menu > li ul li {
+      position: relative;
+      margin-top: 8px;
+      list-style: none; }
+      nav .menu > li ul li::before {
+        content: "";
+        display: block;
+        position: absolute;
+        top: 0;
+        left: -24px;
+        width: 16px;
+        height: 16px;
+        border-bottom: 1px dashed #fff; }
+
+/*小説、オフライン　目次ボタン*/
+.mokujibtn {
+  position: fixed;
+  top: 84px;
+  right: 0;
+  display: inline-block;
+  background-color: #8a9a97;
+  color: #fff;
+  padding: 8px;
+  border-radius: 8px 0 0 8px;
+  z-index: 9;
+  transition: 0.3s; }
+  @media screen and (min-width: 1280px) {
+    .mokujibtn {
+      display: none; } }
+  .mokujibtn p {
+    margin: 0; }
+  .mokujibtn.active {
+    transform: translateX(-218px);
+    transition: 0.3s;
+    background-color: #fff;
+    color: #0d0404;
+    border: 1px solid #0d0404;
+    border-right-color: #fff; }
+
+/*------------------------------------------------------------
+　コンテンツ
+------------------------------------------------------------*/
+main section {
+  margin-bottom: 80px;
+  padding-bottom: 40px;
+  border-bottom: 1px solid #0d0404;
+ }
+  @media screen and (max-width: 1279px) {
+    main section {
+      margin-bottom: 40px; } }
+
+/*-------------------- up date --------------------*/
+.update ul {
+  margin-left: 24px;
+  padding: 0;
+  height: calc(30px * 5 - 10px);
+  padding-left: 24px;
+  border-left: 1px dashed #0d0404;
+  overflow: auto; }
+  .update ul li {
+    position: relative;
+    margin-top: 10px;
+    list-style: none; }
+    .update ul li time {
+      margin-right: 40px; }
+      @media screen and (max-width: 1279px) {
+        .update ul li time {
+          display: block; } }
+    .update ul li::before {
+      content: "";
+      display: block;
+      position: absolute;
+      top: 0;
+      left: -24px;
+      width: 12px;
+      height: 12px;
+      border-bottom: 1px dashed #0d0404; }
+
+/*-------------------- mail --------------------*/
+.mail dl dt {
+  margin: 4px;
+  margin-right: 16px; }
+.mail textarea {
+  width: 80%;
+  height: 200px; }
+
+
+/*------------------------------------------------------------
+　novel
+------------------------------------------------------------*/
+  .novel h3 a {
+    text-decoration: none; }
+
+/*小説カテゴリーごとメニュー*/
+  .novel .novel-menu {
+    position: fixed;
+    top: 0;
+    left: 288px;
+    width: 220px;
+    height: 100vh;
+    border-left: 1px solid #0d0404;
+    border-right: 1px solid #0d0404;
+    padding: 170px 40px 40px 40px;
+    overflow: auto;
+    z-index: 10; }
+    .novel .novel-menu dl dt {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-bottom: 8px;
+      margin-bottom: 24px;
+      border-bottom: 2px solid #0d0404;
+      font-weight: 700;
+      cursor: pointer; }
+      .novel .novel-menu dl dt .arrow {
+        display: inline-block;
+        transform: rotate(-135deg); }
+    .novel .novel-menu dl dd {
+      display: none;
+      margin-bottom: 24px; }
+      .novel .novel-menu dl dd a {
+        display: block;
+        text-decoration: none; }
+    @media screen and (max-width: 1279px) {
+      .novel .novel-menu {
+        left: auto;
+        right: -220px;
+        padding-top: 80px;
+        background: #fff;
+        transition: 0.3s; }
+        .novel .novel-menu.active {
+          transform: translateX(-220px);
+          transition: 0.3s; } }
+
+/*-------------------- タイトル一覧ページ --------------------*/
+  .novel section h4 {
+    padding-left: 24px; }
+    .novel section h4::before {
+      display: none; }
+    .novel section h4::after {
+      content: "";
+      display: block;
+      position: absolute;
+      top: 10px;
+      left: 0;
+      width: 100%;
+      height: 16px;
+      background: #eee;
+      z-index: -1; }
+
+  .novel section .noveltitle {
+    position: relative;
+    display: inline-block;
+    padding-left: 24px; }
+    .novel section .noveltitle:not(:first-of-type) {
+      margin-top: 40px; }
+    .novel section .noveltitle::before {
+      position: absolute;
+      top: 0;
+      left: 0;
+      content: "";
+      display: block;
+      width: 16px;
+      height: 12px;
+      border-bottom: 1px dashed #0d0404; }
+
+	/*タイトルと説明を並べる場合*/
+  .novel section .wrapper dl {
+    margin: 0;
+    width: 50%; }
+    .novel section .wrapper dl dt {
+      margin-right: 40px; }
+      .novel section .wrapper dl dt a {
+        text-decoration: none; }
+    .novel section .wrapper dl dd {
+      color: #777; }
+  @media screen and (max-width: 1279px) {
+    .novel section .wrapper {
+      display: block; }
+      .novel section .wrapper dl {
+        width: 100%;
+        display: block; }
+        .novel section .wrapper dl dd {
+          margin-left: 16px; } }
+
+	/*タイトルのみ並べる場合*/
+  .novel section .enum {
+    margin: 0; }
+    .novel section .enum li {
+      display: inline-block;
+      margin: 0 8px 0 0; }
+      .novel section .enum li a {
+        text-decoration: none; }
+      .novel section .enum li:not(:last-of-type)::after {
+        content: "/";
+        margin-left: 8px; }
+
+	/*カップリングなど見出し*/
+  .novel section .cp {
+    border: 0;
+    margin-bottom: 40px; }
+
+/*-------------------- 小説ページ --------------------*/
+.page-novel section {
+  margin: 40px auto;
+  width: 90%;
+  max-width: 800px; }
+.page-novel .title h2 {
+  position: static;
+  background: none;
+  color: #0d0404;
+  transform: none;
+  padding: 80px 0;
+  width: auto; }
+  .page-novel .title h2:first-letter {
+    font-size: 5rem;
+    color: #8a9a97; }
+  @media screen and (max-width: 1279px) {
+    .page-novel .title h2 {
+      padding: 60px 0; } }
+
+
+/*------------------------------------------------------------
+　offline
+------------------------------------------------------------*/
+/*オフライン　カテゴリーごとメニュー*/
+.offline .offline-menu {
+  position: fixed;
+  top: 0;
+  left: 288px;
+  width: 220px;
+  height: 100vh;
+  border-left: 1px solid #0d0404;
+  border-right: 1px solid #0d0404;
+  padding: 170px 40px 40px 40px;
+  overflow-y: auto;
+  z-index: 10; }
+  .offline .offline-menu dl dt {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 8px;
+    margin-bottom: 24px;
+    border-bottom: 2px solid #0d0404;
+    font-weight: 700;
+    cursor: pointer; }
+    .offline .offline-menu dl dt .arrow {
+      display: inline-block;
+      transform: rotate(-135deg); }
+  .offline .offline-menu dl dd {
+    display: none;
+    margin-bottom: 24px; }
+    .offline .offline-menu dl dd a {
+      display: block;
+      text-decoration: none; }
+  @media screen and (max-width: 1279px) {
+    .offline .offline-menu {
+      left: auto;
+      right: -220px;
+      background: #fff;
+      transition: 0.3s; }
+      .offline .offline-menu.active {
+        transform: translateX(-220px);
+        transition: 0.3s; } }
+
+/*-------------------- 同人誌一覧ページ --------------------*/
+.offline .doujin-list section {
+  border: none; }
+.offline .doujin-list .grid {
+  grid-template-columns: 1fr 1fr;
+  gap: 24px; }
+  @media screen and (max-width: 1279px) {
+    .offline .doujin-list .grid {
+      display: block; } }
+
+	/*個別*/
+  .offline .doujin-list .grid .doujin-item {
+    margin-bottom: 40px; }
+    .offline .doujin-list .grid .doujin-item .title {
+      display: block;
+      font-size: 1.8rem;
+      margin: 24px 0; }
+    .offline .doujin-list .grid .doujin-item .grid {
+      gap: 8px; }
+      .offline .doujin-list .grid .doujin-item .grid li {
+        margin: 0; }
+        .offline .doujin-list .grid .doujin-item .grid li .btn {
+          display: block;
+          width: 100%;
+          text-align: center;
+          margin: 0; }
+        @media screen and (max-width: 1279px) {
+          .offline .doujin-list .grid .doujin-item .grid li {
+            margin-bottom: 4px; } }
+
+
+@keyframes fadeIn { /*animation-nameで設定した値を書く*/
+  0% {opacity: 0} /*アニメーション開始時は不透明度0%*/
+  100% {opacity: 1} /*アニメーション終了時は不透明度100%*/
+}
+
+@keyframes slideIn { /*animation-nameで設定した値を書く*/
+  0% {
+    margin-left: 100%;
+    margin-top: -50%;
+    }
+  100% {
+    margin-left: -10px;
+    margin-top: 60px;
+    }
+}
+
+/*------------------------------------------------------------
+　クレジット
+------------------------------------------------------------*/
+footer {
+  position: absolute;
+  bottom: 8px;
+  right: 8px;
+  text-align: right; }
+  footer small {
+    display: inline-block;
+    line-height: 1.2;
+    opacity: 0.5; }
+    footer small a {
+      color: #fff; }
