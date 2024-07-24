@@ -5,6 +5,8 @@ if(path.indexOf("akihabara")!=-1){
   menu='url(\"../img/menu_akiba.jfif\")'
 }else if(path.indexOf("kyoto")!=-1){
   menu='url(\"../img/menu_kyoto.JPG\")'
+}else if(path.indexOf("yokohama")!=-1){
+  menu='url(\"../img/menu_yokohama.JPG\")'
 }else{
   menu='url(\"../img/menu_shibuya.jpg\")'
 }
@@ -28,6 +30,7 @@ var menustr = "\
         <ul>\
           <li><a href=\"akihabara.html\">くーちゃんの秋葉原探索</a></li>\
           <li><a href=\"kyoto.html\">くーちゃんの厄払い京都散策</a></li>\
+          <li><a href=\"yokohama.html\">くーちゃんのクチバシティ訪問</a></li>\
         </ul>\
       </li>\
     </ul>\

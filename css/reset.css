@@ -58,6 +58,7 @@ a:not([class]) {
 /* img要素の扱いを簡単にする */
 img {
   max-width: 100%;
+  height: auto;
   display: block;
 }
 

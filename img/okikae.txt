@@ -1,0 +1,11 @@
+setlocal enabledelayedexpansion
+set x=1
+for %%i in (DSC*.JPG) do (
+ set s=%%i
+ move !s! yokohama_!x!.JPG
+ set /a x+=1
+)
+
+endlocal
+pause
+

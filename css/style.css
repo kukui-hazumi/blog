@@ -39,8 +39,7 @@ a {
     color: #fff; }
 
 img {
-  width: 100%;
-  height: 100%;
+
 }
 
 h1, h2, h3, h4 {
@@ -253,6 +252,8 @@ ul.yoko {
 
 
 
+
+
 /*---------------------------------
 サイト名
 ---------------------------------*/
@@ -298,8 +299,8 @@ nav .menu > li {
     margin: 0;
     margin-left: 24px;
     padding: 0;
-    height: calc(30px * 4 - 16px);
-    /*４をnovelのカテゴリーの数に変えてください*/
+    height: calc(145px);
+    /*上記のピクセルはカテゴリ増えるたび良い感じに*/
     padding-left: 24px;
     border-left: 1px dashed #fff; }
     nav .menu > li ul li {
@@ -503,6 +504,7 @@ main section {
   .novel section .cp {
     border: 0;
     margin-bottom: 40px; }
+
 
 /*-------------------- 小説ページ --------------------*/
 .page-novel section {
